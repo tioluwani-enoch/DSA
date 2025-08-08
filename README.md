@@ -62,7 +62,7 @@ If you haven’t read it yet… you’re missing out. It’s the friendliest alg
 
 ## ✨ About Me
 
-Hi, I’m Tioluwani — a curious developer who enjoys:
+Hi, I’m Enoch — a curious developer who enjoys:
 
 - Writing code that my future self can _hopefully_ understand
 - Learning new ways to think about problem solving
