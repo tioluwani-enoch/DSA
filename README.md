@@ -43,7 +43,7 @@ Think of it as bilingual DSA training — because why not?
    node dsa_name.js
    ```
 4. Resources:
-   - There are some folders where I have a `resources.txt` file where I put links to videos, images, ChatGPT conversation that all made me bettter understand the DSA I was doing. However, before you see my ChatGPT conversation I want to let you know that I talk to CHATGPT like a friend, or a teacher depending on what I want to get out of it.
+   - There are some folders where I have a `resources.txt` file where I put links to videos, images, ChatGPT conversation that all made me bettter understand the DSA I was doing. However, before you see my ChatGPT conversation I want to let you know that I talk to ChatGPT like a friend, or a teacher depending on what I want to get out of it.
 ---
 
 ## 📖 Book Reference
