@@ -32,6 +32,7 @@ for perm in permutations(cities):
 print("\nShortest route:", best_route)
 print("Shortest distance:", shortest_distance)
 
+# without using python's inbuilt permutation function
 # def generate_permutations(arr):
 #     if len(arr) == 0:
 #         return [[]]  # base case: one empty permutation

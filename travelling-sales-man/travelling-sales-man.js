@@ -1,3 +1,5 @@
+// travelling salesman brute force style where the start and end are always fixed in this case A is our start and end
+
 const distance = [
   // A, B,  C,  D
   [0, 10, 15, 20], // A
@@ -16,7 +18,7 @@ function sum_distance(cities) {
   return result;
 
   //or
-  
+
   //   let result = 0;
   //   for (let i = 0; i < cities.length - 1; i++) {
   //     result += distance[cities[i]][cities[i + 1]];
@@ -31,21 +33,29 @@ function permutation(arr, current = [], results = []) {
     for (let i = 0; i < arr.length; i++) {
       let duplicate = [...arr]; // making a duplicate of the arr because we do not want to screw up the loop process of our for loop
       let removed = duplicate.splice(i, 1)[0]; // so this duplicate mutates the current duplicate and assigns it to removed
-      permutation(duplicate, [...current, removed], results);
+      permutation(duplicate, [...current, removed], results); // then we call the function again after all this s a recurive way of handling permutation
     }
   }
 
   return results;
 }
 
-console.log(permutation(cities));
+function travelling_salesman(cities) {
+  let perms = permutation(cities); // let's get all the ways pathes that our salesman can travel e.g B,C,D, B,D,C remember A is always the start and the end
+  let shortest_distance = Infinity; // for now infinity because that is the largest number that can be
+  let best_path = [];
 
-function travelling_salesman(route) {
-  let path = [0] + permutation(route) + [0];
-  let shortest_distance = Infinity;
-  let current_distance = sum_distance(path);
-  if (current_distance < shortest_distance)
-    shortest_distance = current_distance;
+  for (let perm of perms) {
+    let path = [0, ...perm, 0];
+    let dist = sum_distance(path);
+    if (dist < shortest_distance) {
+      // check if the distance we got from the function sum_distance is smaller the shortest_distance if it is change the shortest_distance
+      shortest_distance = dist;
+      best_path = path;
+    }
+  }
 
-  return path;
+  return { best_path, shortest_distance };
 }
+
+console.log(travelling_salesman(cities));
