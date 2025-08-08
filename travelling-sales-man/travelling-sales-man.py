@@ -1,3 +1,6 @@
+## travelling salesman brute force style where the start and end are always fixed in this case A is our start and end
+
+
 from itertools import permutations
 
 distance = [
@@ -10,6 +13,7 @@ distance = [
 
 cities = [1, 2, 3]  # cities to permute
 
+
 def sum_distance(route):
     result = 0
     for i in range(len(route) - 1):
@@ -17,20 +21,23 @@ def sum_distance(route):
     return result
 
 
-shortest_distance = float("inf")
-best_route = 0
+def travelling_salesman(cities):
+    shortest_distance = float("inf")
+    best_route = 0
+    for perm in permutations(cities):
+        route = [0] + list(perm) + [0]
+        current_distance = sum_distance(route)
+        print(f"Route: {route} → Distance: {current_distance}")
 
-for perm in permutations(cities):
-    route = [0] + list(perm) + [0]
-    current_distance = sum_distance(route)
-    print(f"Route: {route} → Distance: {current_distance}")
+        if current_distance < shortest_distance:
+            shortest_distance = current_distance
+            best_route = route
 
-    if current_distance < shortest_distance:
-        shortest_distance = current_distance
-        best_route = route
+    print("\nShortest route:", best_route)
+    print("Shortest distance:", shortest_distance)
 
-print("\nShortest route:", best_route)
-print("Shortest distance:", shortest_distance)
+
+print(travelling_salesman(cities))
 
 # without using python's inbuilt permutation function
 # def generate_permutations(arr):
@@ -39,14 +46,9 @@ print("Shortest distance:", shortest_distance)
 
 #     result = []
 #     for i in range(len(arr)):
-#         current = arr[i]
+#         current = arr[i] # pick the ith value of the array
 #         remaining = arr[:i] + arr[i+1:]  # all elements except arr[i]
 #         for p in generate_permutations(remaining):
-#             result.append([current] + p)
+#             result.append([current] + p) add the ith value of the array + whatever we get from the generate_permutations
 
 #     return result
-
-# cities = [1, 2, 3]
-# for perm in generate_permutations(cities):
-#     route = [0] + perm + [0]
-#     print(route)

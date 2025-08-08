@@ -1,0 +1,1 @@
+I found this video really helpful to understand the basis of the permutation beofre I made some changes to suite my code: https://www.youtube.com/watch?v=vow4sB4sQKc

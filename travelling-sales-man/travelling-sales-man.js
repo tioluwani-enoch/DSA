@@ -28,7 +28,7 @@ function sum_distance(cities) {
 
 function permutation(arr, current = [], results = []) {
   if (arr.length == 0) {
-    results.push([...current]); // so if the length of the array given to us is less than 0, we want to return log wahtever we have in the permutaions which would be an array that signifies the end of a shuffle
+    results.push([...current]); // so if the length of the array given to us is less than 0, we want to return log whatever we have in the permutaions which would be an array that signifies the end of a shuffle
   } else {
     for (let i = 0; i < arr.length; i++) {
       let duplicate = [...arr]; // making a duplicate of the arr because we do not want to screw up the loop process of our for loop
